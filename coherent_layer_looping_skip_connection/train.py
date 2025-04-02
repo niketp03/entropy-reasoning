@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument(
         "--dataset_config",
         type=str,
-        default="",
+        default="wikitext-2-raw-v1",
         help="Dataset configuration name (wikitext-2-raw-v1 or wikitext-103-raw-v1)",
     )
     parser.add_argument(

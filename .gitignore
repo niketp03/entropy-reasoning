@@ -1,2 +1,5 @@
 coherent_layer_looping/output/
 coherent_layer_looping/wandb/
+
+coherent_layer_looping_skip_connection/output/
+coherent_layer_looping_skip_connection/wandb/

@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# Run the training script with accelerate
-# This script sets up distributed training across 4 GPUs
+# Clean up existing installations
+pip uninstall -y numpy transformers
 
-# Install requirements
+# Install requirements with specific versions
+pip install --upgrade pip
+pip install numpy==1.24.3
+pip install transformers==4.37.2
 pip install -r requirements.txt
 
 # Run training with accelerate
-accelerate launch --multi_gpu --num_processes=4 train.py \
+python3 train.py \
     --model_name_or_path="Qwen/Qwen2.5-0.5B" \
     --n=8 \
     --max_loop_count=10 \
@@ -21,4 +24,6 @@ accelerate launch --multi_gpu --num_processes=4 train.py \
     --kl_weight=1 \
     --lm_weight=1 \
     --output_dir="./output/layer_looping_qwen_open_web_text" \
-    --use_wandb
+    --use_wandb \
+    --dataset_name="openwebtext" \
+    --dataset_config="" \

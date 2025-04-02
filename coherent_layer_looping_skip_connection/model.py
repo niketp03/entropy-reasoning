@@ -111,13 +111,16 @@ class LayerLoopingModel(nn.Module):
         for i, layer in enumerate(self.early_layers):
             hidden_states = layer(hidden_states, attention_mask=attention_mask)[0]
         
+        #save skip connection
+        skip_connect = hidden_states.clone()
+
         if return_hidden_states:
             hidden_states_history.append(("early", hidden_states.clone()))
         
         # Apply middle layers with looping k times
         for j in range(k):
             for layer in self.loop_layers:
-                hidden_states = layer(hidden_states, attention_mask=attention_mask)[0]
+                hidden_states = layer(hidden_states, attention_mask=attention_mask)[0] + skip_connect
             if return_hidden_states:
                 hidden_states_history.append((f"middle_loop_{j}", hidden_states.clone()))
         
