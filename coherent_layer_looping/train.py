@@ -47,7 +47,7 @@ def parse_args():
     parser.add_argument(
         "--n",
         type=int,
-        default=6,
+        default=8,
         help="Start layer index for looping (0-indexed)",
     )
     parser.add_argument(
@@ -125,19 +125,19 @@ def parse_args():
     parser.add_argument(
         "--eval_steps",
         type=int,
-        default=500,
+        default=100,
         help="Number of update steps between evaluations",
     )
     parser.add_argument(
         "--save_steps",
         type=int,
-        default=500,
+        default=100,
         help="Number of update steps between saving checkpoints",
     )
     parser.add_argument(
         "--log_steps",
         type=int,
-        default=100,
+        default=10,
         help="Number of update steps between logging",
     )
     parser.add_argument(

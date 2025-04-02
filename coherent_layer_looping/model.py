@@ -44,10 +44,13 @@ class LayerLoopingModel(nn.Module):
         print(f"  - Late layers: {m+1} to {self.layer_count-1}")
         print(f"  - Max loop count: {max_loop_count}")
     
-    def forward(self, input_ids, attention_mask=None, labels=None, k=None):
+    def forward(self, input_ids, attention_mask=None, labels=None, k=None, return_hidden_states=False):
         """
         Forward pass with layer looping.
         """
+        # Initialize list to store hidden states if needed
+        hidden_states_history = [] if return_hidden_states else None
+        
         # During training, randomly sample loop count if not specified
         if k is None and self.training:
             k = torch.randint(1, self.max_loop_count + 1, (1,)).item()
@@ -73,16 +76,22 @@ class LayerLoopingModel(nn.Module):
         for i, layer in enumerate(self.early_layers):
             hidden_states = layer(hidden_states, attention_mask=attention_mask)[0]
         
-        # Rest of the forward method remains the same...
+        if return_hidden_states:
+            hidden_states_history.append(("early", hidden_states.clone()))
         
         # Apply middle layers with looping k times
         for j in range(k):
             for layer in self.loop_layers:
                 hidden_states = layer(hidden_states, attention_mask=attention_mask)[0]
+            if return_hidden_states:
+                hidden_states_history.append((f"middle_loop_{j}", hidden_states.clone()))
         
         # Apply late layers (no looping)
         for layer in self.late_layers:
             hidden_states = layer(hidden_states, attention_mask=attention_mask)[0]
+        
+        if return_hidden_states:
+            hidden_states_history.append(("late", hidden_states.clone()))
         
         # Apply final layer norm
         hidden_states = self.model.model.norm(hidden_states)
@@ -98,29 +107,38 @@ class LayerLoopingModel(nn.Module):
             loss_fct = nn.CrossEntropyLoss()
             loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
         
+        if return_hidden_states:
+            return {"loss": loss, "logits": lm_logits, "hidden_states": hidden_states_history}
         return {"loss": loss, "logits": lm_logits}
     
-    def sample_generation(self, input_ids, max_length=100, k_value=1, **kwargs):
+    def sample_generation(self, input_ids, return_matrix=False, max_length=100, k_value=1, **kwargs):
         """
         Generate text using the model with a specific loop count.
         
         Args:
             input_ids: Input token IDs
+            return_matrix: If True, return hidden states at each stage
             max_length: Maximum length of generated text
             k_value: Number of loops to use during generation
             **kwargs: Additional arguments for generation
+        
+        Returns:
+            If return_matrix=False: generated token ids
+            If return_matrix=True: tuple of (generated token ids, list of hidden states)
         """
-        # Set model to eval mode
         self.eval()
+        all_hidden_states = [] if return_matrix else None
         
         with torch.no_grad():
-            # Clone input_ids for generation
             current_ids = input_ids.clone()
             
             # Generate tokens one by one
             for _ in range(max_length - input_ids.size(1)):
-                # Forward pass with specific k
-                outputs = self(current_ids, k=k_value)
+                # Forward pass with specific k and hidden states collection
+                outputs = self(current_ids, k=k_value, return_hidden_states=return_matrix)
+                
+                if return_matrix:
+                    all_hidden_states.append(outputs["hidden_states"])
                 
                 # Get next token (simple greedy decoding)
                 next_token_logits = outputs["logits"][:, -1, :]
@@ -132,8 +150,10 @@ class LayerLoopingModel(nn.Module):
                 # Check for EOS token
                 if next_token.item() == self.model.config.eos_token_id:
                     break
-                    
-            return current_ids
+        
+        if return_matrix:
+            return current_ids, all_hidden_states
+        return current_ids
 
     def get_original_model_output(self, input_ids, attention_mask=None):
         """
