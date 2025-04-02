@@ -1,0 +1,20 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 128
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+***** Running training *****
+  Num examples = 36718
+  Num epochs = 3
+  Per-device batch size = 2
+  Gradient accumulation steps = 16
+  Total optimization steps = 858
+  Using distillation: True
+  2%|▋                                      | 16/858 [01:24<1:13:20,  5.23s/it]

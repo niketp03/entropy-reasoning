@@ -1,0 +1,18 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 32
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 475, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 194, in main
+    model = LayerLoopingModel(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/niket/3E/model.py", line 29, in __init__
+    self.layers = self.model.transformer.h  # Get transformer layers
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1729, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'Qwen2ForCausalLM' object has no attribute 'transformer'

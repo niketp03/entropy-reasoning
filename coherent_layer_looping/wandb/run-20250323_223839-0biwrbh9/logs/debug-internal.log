@@ -1,0 +1,19 @@
+{"time":"2025-03-23T22:38:39.576040577-07:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-03-23T22:38:39.576071907-07:00","level":"INFO","msg":"created symlink","path":"/home/niket/3E/wandb/run-20250323_223839-0biwrbh9/logs/debug-core.log"}
+{"time":"2025-03-23T22:38:39.69023908-07:00","level":"INFO","msg":"created new stream","id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:39.690305199-07:00","level":"INFO","msg":"stream: started","id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:39.690359349-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:39.690400619-07:00","level":"INFO","msg":"sender: started","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:39.690475818-07:00","level":"INFO","msg":"handler: started","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:39.930374069-07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-23T22:38:48.82284117-07:00","level":"INFO","msg":"stream: closing","id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:48.822952579-07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-23T22:38:48.824147889-07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-23T22:38:48.911581654-07:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-03-23T22:38:48.911606443-07:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-03-23T22:38:48.911616013-07:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-03-23T22:38:49.226125905-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-23T22:38:49.334963642-07:00","level":"INFO","msg":"handler: closed","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:49.334992022-07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:49.335025262-07:00","level":"INFO","msg":"sender: closed","stream_id":"0biwrbh9"}
+{"time":"2025-03-23T22:38:49.338362794-07:00","level":"INFO","msg":"stream: closed","id":"0biwrbh9"}

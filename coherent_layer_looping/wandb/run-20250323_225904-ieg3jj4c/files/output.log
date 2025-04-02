@@ -1,0 +1,50 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 128
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+Map (num_proc=4): 100%|█████████| 36718/36718 [00:04<00:00, 7770.38 examples/s]
+***** Running training *****
+  Num examples = 36718
+  Num epochs = 3
+  Per-device batch size = 2
+  Gradient accumulation steps = 16
+  Total optimization steps = 858
+  Using distillation: True
+  2%|▌                                      | 13/858 [01:09<1:14:54,  5.32s/it]Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 493, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 361, in main
+    accelerator.backward(loss / args.gradient_accumulation_steps)
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/accelerator.py", line 2246, in backward
+    loss.backward(**kwargs)
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/niket/3E/train.py", line 493, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/niket/3E/train.py", line 361, in main
+[rank0]:     accelerator.backward(loss / args.gradient_accumulation_steps)
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/accelerator.py", line 2246, in backward
+[rank0]:     loss.backward(**kwargs)
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

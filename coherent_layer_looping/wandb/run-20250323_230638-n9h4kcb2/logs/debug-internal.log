@@ -1,0 +1,19 @@
+{"time":"2025-03-23T23:06:38.565248334-07:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-03-23T23:06:38.565274183-07:00","level":"INFO","msg":"created symlink","path":"/home/niket/3E/wandb/run-20250323_230638-n9h4kcb2/logs/debug-core.log"}
+{"time":"2025-03-23T23:06:38.7787278-07:00","level":"INFO","msg":"created new stream","id":"n9h4kcb2"}
+{"time":"2025-03-23T23:06:38.77876618-07:00","level":"INFO","msg":"stream: started","id":"n9h4kcb2"}
+{"time":"2025-03-23T23:06:38.77882457-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:06:38.77887065-07:00","level":"INFO","msg":"handler: started","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:06:38.779016629-07:00","level":"INFO","msg":"sender: started","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:06:39.023681545-07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-23T23:09:23.55495492-07:00","level":"INFO","msg":"stream: closing","id":"n9h4kcb2"}
+{"time":"2025-03-23T23:09:23.555221908-07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-23T23:09:23.557705364-07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-23T23:09:23.661837649-07:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-03-23T23:09:23.661873269-07:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-03-23T23:09:23.661888538-07:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-03-23T23:09:23.975647875-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-23T23:09:24.075506479-07:00","level":"INFO","msg":"handler: closed","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:09:24.075547949-07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:09:24.075574639-07:00","level":"INFO","msg":"sender: closed","stream_id":"n9h4kcb2"}
+{"time":"2025-03-23T23:09:24.079130758-07:00","level":"INFO","msg":"stream: closed","id":"n9h4kcb2"}

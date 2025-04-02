@@ -1,0 +1,33 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 32
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 481, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 208, in main
+    dataset = load_dataset(args.dataset_name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/datasets/load.py", line 2129, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/datasets/load.py", line 1886, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/datasets/builder.py", line 554, in _create_builder_config
+    raise ValueError(
+ValueError: Config name is missing.
+Please pick one among the available configs: ['wikitext-103-raw-v1', 'wikitext-103-v1', 'wikitext-2-raw-v1', 'wikitext-2-v1']
+Example of usage:
+	`load_dataset('wikitext', 'wikitext-103-raw-v1')`

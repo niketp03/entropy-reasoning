@@ -1,0 +1,67 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 128
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+***** Running training *****
+  Num examples = 36718
+  Num epochs = 3
+  Per-device batch size = 2
+  Gradient accumulation steps = 16
+  Total optimization steps = 858
+  Using distillation: True
+  2%|▊                                      | 19/858 [02:20<1:41:33,  7.26s/it]Traceback (most recent call last):
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/utils/operations.py", line 155, in send_to_device
+    return tensor.to(device, non_blocking=non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BatchEncoding.to() got an unexpected keyword argument 'non_blocking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 493, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 325, in main
+    for step, batch in enumerate(train_dataloader):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/data_loader.py", line 572, in __iter__
+    current_batch = send_to_device(current_batch, self.device, non_blocking=self._non_blocking)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/utils/operations.py", line 157, in send_to_device
+    return tensor.to(device)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 800, in to
+    self.data = {k: v.to(device=device) for k, v in self.data.items()}
+                    ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/utils/operations.py", line 155, in send_to_device
+[rank0]:     return tensor.to(device, non_blocking=non_blocking)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: TypeError: BatchEncoding.to() got an unexpected keyword argument 'non_blocking'
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/niket/3E/train.py", line 493, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/niket/3E/train.py", line 325, in main
+[rank0]:     for step, batch in enumerate(train_dataloader):
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/data_loader.py", line 572, in __iter__
+[rank0]:     current_batch = send_to_device(current_batch, self.device, non_blocking=self._non_blocking)
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/utils/operations.py", line 157, in send_to_device
+[rank0]:     return tensor.to(device)
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 800, in to
+[rank0]:     self.data = {k: v.to(device=device) for k, v in self.data.items()}
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

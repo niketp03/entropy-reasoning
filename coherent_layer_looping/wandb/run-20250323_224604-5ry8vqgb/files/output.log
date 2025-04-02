@@ -1,0 +1,30 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 128
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 487, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 299, in main
+    model, optimizer, train_dataloader, eval_dataloader, lr_scheduler = accelerator.prepare(
+                                                                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/accelerator.py", line 1289, in prepare
+    raise ValueError(
+ValueError: You can't train a model that has been loaded with `device_map='auto'` in any distributed mode. Please rerun your script specifying `--num_processes=1` or by launching with `python {{myscript.py}}`.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/niket/3E/train.py", line 487, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/niket/3E/train.py", line 299, in main
+[rank0]:     model, optimizer, train_dataloader, eval_dataloader, lr_scheduler = accelerator.prepare(
+[rank0]:                                                                         ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/accelerate/accelerator.py", line 1289, in prepare
+[rank0]:     raise ValueError(
+[rank0]: ValueError: You can't train a model that has been loaded with `device_map='auto'` in any distributed mode. Please rerun your script specifying `--num_processes=1` or by launching with `python {{myscript.py}}`.

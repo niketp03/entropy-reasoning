@@ -1,0 +1,84 @@
+_wandb:
+    value:
+        cli_version: 0.18.7
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 51
+                - 53
+                - 55
+                - 71
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 51
+                - 53
+                - 55
+                - 71
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.12.7
+            "5": 0.18.7
+            "6": 4.40.2
+            "8":
+                - 5
+            "12": 0.18.7
+            "13": linux-x86_64
+dataset_name:
+    value: tiny_shakespeare
+eval_steps:
+    value: 500
+gradient_accumulation_steps:
+    value: 8
+kl_weight:
+    value: 0.5
+learning_rate:
+    value: 5e-05
+lm_weight:
+    value: 1
+log_steps:
+    value: 100
+low_cpu_mem_usage:
+    value: false
+lr_scheduler_type:
+    value: cosine
+m:
+    value: 12
+max_loop_count:
+    value: 10
+max_train_steps:
+    value: null
+model_name_or_path:
+    value: Qwen/Qwen2.5-0.5B
+"n":
+    value: 8
+num_train_epochs:
+    value: 3
+output_dir:
+    value: ./output/layer_looping_qwen
+per_device_batch_size:
+    value: 4
+save_steps:
+    value: 2000
+seed:
+    value: 42
+sequence_length:
+    value: 512
+use_distillation:
+    value: true
+use_wandb:
+    value: true
+warmup_ratio:
+    value: 0.03
+weight_decay:
+    value: 0.01

@@ -1,0 +1,8 @@
+{"time":"2025-03-23T22:22:04.046551044-07:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-03-23T22:22:04.046582723-07:00","level":"INFO","msg":"created symlink","path":"/home/niket/3E/wandb/run-20250323_222204-s6nmza89/logs/debug-core.log"}
+{"time":"2025-03-23T22:22:04.159230041-07:00","level":"INFO","msg":"created new stream","id":"s6nmza89"}
+{"time":"2025-03-23T22:22:04.15928201-07:00","level":"INFO","msg":"stream: started","id":"s6nmza89"}
+{"time":"2025-03-23T22:22:04.15936532-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"s6nmza89"}
+{"time":"2025-03-23T22:22:04.159400629-07:00","level":"INFO","msg":"handler: started","stream_id":"s6nmza89"}
+{"time":"2025-03-23T22:22:04.159441309-07:00","level":"INFO","msg":"sender: started","stream_id":"s6nmza89"}
+{"time":"2025-03-23T22:22:04.384585365-07:00","level":"INFO","msg":"Starting system monitor"}

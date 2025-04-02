@@ -1,0 +1,8 @@
+{"time":"2025-03-23T23:10:59.200135552-07:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-03-23T23:10:59.200165532-07:00","level":"INFO","msg":"created symlink","path":"/home/niket/3E/wandb/run-20250323_231059-69hu4276/logs/debug-core.log"}
+{"time":"2025-03-23T23:10:59.311038718-07:00","level":"INFO","msg":"created new stream","id":"69hu4276"}
+{"time":"2025-03-23T23:10:59.311078628-07:00","level":"INFO","msg":"stream: started","id":"69hu4276"}
+{"time":"2025-03-23T23:10:59.311163748-07:00","level":"INFO","msg":"writer: Do: started","stream_id":"69hu4276"}
+{"time":"2025-03-23T23:10:59.311194028-07:00","level":"INFO","msg":"sender: started","stream_id":"69hu4276"}
+{"time":"2025-03-23T23:10:59.311222088-07:00","level":"INFO","msg":"handler: started","stream_id":"69hu4276"}
+{"time":"2025-03-23T23:10:59.595385193-07:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,45 @@
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Effective batch size: 128
+/home/niket/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model initialized with looping configuration:
+  - Total layers: 24
+  - Early layers: 0 to 7
+  - Loop layers: 8 to 12
+  - Late layers: 13 to 23
+  - Max loop count: 10
+***** Running training *****
+  Num examples = 36718
+  Num epochs = 3
+  Per-device batch size = 4
+  Gradient accumulation steps = 8
+  Total optimization steps = 858
+  Using distillation: True
+  0%|                                          | 1/858 [00:04<59:39,  4.18s/it]Traceback (most recent call last):
+  File "/home/niket/3E/train.py", line 493, in <module>
+    main()
+  File "/home/niket/3E/train.py", line 353, in main
+    kl_loss = create_kl_loss(looped_logits, original_logits)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/niket/3E/utils.py", line 32, in create_kl_loss
+    kl_div = F.kl_div(
+             ^^^^^^^^^
+  File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/nn/functional.py", line 3006, in kl_div
+    reduced = torch.kl_div(input, target, reduction_enum, log_target=log_target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.16 GiB. GPU 0 has a total capacity of 23.58 GiB of which 49.38 MiB is free. Process 4503 has 298.00 MiB memory in use. Process 2853891 has 596.00 MiB memory in use. Including non-PyTorch memory, this process has 22.64 GiB memory in use. Of the allocated memory 21.29 GiB is allocated by PyTorch, and 870.15 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/niket/3E/train.py", line 493, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/niket/3E/train.py", line 353, in main
+[rank0]:     kl_loss = create_kl_loss(looped_logits, original_logits)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/niket/3E/utils.py", line 32, in create_kl_loss
+[rank0]:     kl_div = F.kl_div(
+[rank0]:              ^^^^^^^^^
+[rank0]:   File "/home/niket/miniconda3/lib/python3.12/site-packages/torch/nn/functional.py", line 3006, in kl_div
+[rank0]:     reduced = torch.kl_div(input, target, reduction_enum, log_target=log_target)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.16 GiB. GPU 0 has a total capacity of 23.58 GiB of which 49.38 MiB is free. Process 4503 has 298.00 MiB memory in use. Process 2853891 has 596.00 MiB memory in use. Including non-PyTorch memory, this process has 22.64 GiB memory in use. Of the allocated memory 21.29 GiB is allocated by PyTorch, and 870.15 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
